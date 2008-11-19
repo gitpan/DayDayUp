@@ -1,0 +1,27 @@
+---
+abstract: 'DayDayUp - good good study, day day up'
+author:
+  - 'Fayland Lam<fayland@gmail.com>'
+distribution_type: module
+generated_by: 'Module::Install version 0.77'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: DayDayUp
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  DBD::SQLite: 0
+  DBI: 0
+  Mojo: 0.8009
+  MojoX::Renderer::TT: 0
+  Moose: 0.57
+  Template: 2.20
+  Template::Plugin::FillInForm: 0
+  YAML: 0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01

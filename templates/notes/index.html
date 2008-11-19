@@ -1,0 +1,66 @@
+<p> <a href="/notes/add">Add a Note</a> </p>
+
+[% UNLESS is_in_closed_page %]
+
+<h3>Open Notes</h3>
+[% IF notes.open.size %]
+
+<table border='1'>
+[% FOREACH note IN notes.open %]
+<tr>
+	<td>[% levels.${note.level} %]</td>
+	<td>[% note.note | html_line_break %]</td>
+	<td><a href="/notes/[% note.note_id %]/edit">Edit</a> | <a href="/notes/[% note.note_id %]/delete">Delete</a> | <a href="/notes/[% note.note_id %]/update?status=closed">Close</a> | <a href="/notes/[% note.note_id %]/update?status=suspended">Suspended</a></td>
+</tr>
+[% END %]
+</table>
+
+[% ELSE %]
+
+<p>nothing is found here</p>
+
+[% END %]
+
+<h3>Suspended Notes</h3>
+[% IF notes.suspended.size %]
+
+<table border='1'>
+[% FOREACH note IN notes.suspended %]
+<tr>
+	<td>[% levels.${note.level} %]</td>
+	<td>[% note.note | html_line_break %]</td>
+	<td><a href="/notes/[% note.note_id %]/edit">Edit</a> | <a href="/notes/[% note.note_id %]/delete">Delete</a> | <a href="/notes/[% note.note_id %]/update?status=closed">Close</a> | <a href="/notes/[% note.note_id %]/update?status=open">Open</a></td>
+</tr>
+[% END %]
+</table>
+
+[% ELSE %]
+
+<p>nothing is found here</p>
+
+[% END %]
+
+[% END; # for UNLESS is_in_closed_page %]
+
+<h3>Closed Notes</h3>
+[% IF notes.closed.size %]
+
+<table border='1'>
+[% FOREACH note IN notes.closed %]
+<tr>
+	<td>[% levels.${note.level} %]</td>
+	<td>[% note.note | html_line_break %]</td>
+	<td><a href="/notes/[% note.note_id %]/edit">Edit</a> | <a href="/notes/[% note.note_id %]/delete">Delete</a> | <a href="/notes/[% note.note_id %]/update?status=open">re-Open</a></td>
+</tr>
+[% END %]
+</table>
+
+[% IF notes.closed.size == 5 %]
+<p><a href="/notes/closed">View All Closed</a></p>
+[% END %]
+
+[% ELSE %]
+
+<p>nothing is found here</p>
+
+[% END %]
