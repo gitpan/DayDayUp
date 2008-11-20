@@ -6,7 +6,7 @@ use utf8;
 
 Template::Document->new({
     METADATA => {
-        'modtime' => '1227065220',
+        'modtime' => '1227084854',
         'name' => 'wrapper.html',
     },
     BLOCK => sub {
@@ -16,7 +16,7 @@ Template::Document->new({
         my $_tt_error;
         
         eval { BLOCK: {
-    $output .=  "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n<link rel=\"stylesheet\" href=\"/css/style.css\" type=\"text/css\" />\n\n<title> Day Day Up </title>\n</head>\n<body>\n\n<p> <a href=\"/\">Index</a> | <a href=\"/notes/\">Notes</a> </p>\n\n<hr />\n";
+    $output .=  "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n<link rel=\"stylesheet\" href=\"/css/style.css\" type=\"text/css\" />\n\n<title> Day Day Up </title>\n</head>\n<body>\n\n<p> <a href=\"/\">Index</a> | <a href=\"/notes/\">Notes</a> | <a href=\"/perl/\">Perl Tools</a> </p>\n\n<hr />\n";
     #line 16 "/home/fayland/svn/fayland/CPAN/day_day_up/templates/wrapper.html"
     $output .=  $stash->get('content');
     $output .=  "\n<hr />\n\nPowered by DayDayUp ";

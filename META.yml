@@ -16,6 +16,7 @@ no_index:
 requires:
   DBD::SQLite: 0
   DBI: 0
+  File::Slurp: 0
   Mojo: 0.8009
   MojoX::Renderer::TT: 0
   Moose: 0.57
@@ -24,4 +25,4 @@ requires:
   YAML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01
+version: 0.02

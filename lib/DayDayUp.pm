@@ -3,7 +3,7 @@ package DayDayUp;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use base 'Mojolicious';
 
@@ -78,6 +78,10 @@ but I don't mind if you use it in your localhost.
 =head1 CONFIGURATION
 
 create a daydayup_local.yml at the same dir as daydayup.yml
+
+=head1 SEE ALSO
+
+L<Mojo>, L<Mojolicious>
 
 =head1 AUTHOR
 

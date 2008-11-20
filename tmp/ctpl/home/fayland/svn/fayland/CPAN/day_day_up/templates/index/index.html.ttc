@@ -6,7 +6,7 @@ use utf8;
 
 Template::Document->new({
     METADATA => {
-        'modtime' => '1227058768',
+        'modtime' => '1227084854',
         'name' => '/home/fayland/svn/fayland/CPAN/day_day_up/templates/index/index.html',
     },
     BLOCK => sub {
@@ -16,7 +16,7 @@ Template::Document->new({
         my $_tt_error;
         
         eval { BLOCK: {
-    $output .=  "\n<p style=\"margin: 2em\"><a href=\"/notes\">Notes</a> is ...</p>\n\n<p>Thanks.</p>";
+    $output .=  "\n<ul>\n<li><a href=\"/notes/\">Notes</a> is ...</li>\n<li><a href=\"/perl/\">Perl Tools</a> is ...</li>\n</ul>\n\n<p>Thanks.</p>";
         } };
         if ($@) {
             $_tt_error = $context->catch($@, \$output);
