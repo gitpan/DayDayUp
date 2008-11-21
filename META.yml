@@ -22,7 +22,8 @@ requires:
   Moose: 0.57
   Template: 2.20
   Template::Plugin::FillInForm: 0
+  WWW::Contact: 0
   YAML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.04
