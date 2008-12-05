@@ -3,7 +3,7 @@ package DayDayUp::Notes;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 use base 'Mojolicious::Controller';
 
@@ -34,7 +34,7 @@ sub index {
     my $dbh = $c->dbh;
     
     my $notes = $self->_get_notes( $c );
-    $c->render(template => 'notes/index.html', notes => $notes, levels => \%levels);
+    $c->view(template => 'notes/index.html', notes => $notes, levels => \%levels);
 }
 
 sub add {
@@ -45,7 +45,7 @@ sub add {
         levels   => \%levels,
     };
     unless ( $c->req->method eq 'POST' ) {
-        return $c->render( $stash );
+        return $c->view( $stash );
     }
     
     my $config = $c->config;
@@ -58,7 +58,7 @@ sub add {
     my $sth = $dbh->prepare($sql);
     $sth->execute( $notes, $level, 2, time() );
     
-    $c->render(template => 'redirect.html', url => '/notes/');
+    $c->view(template => 'redirect.html', url => '/notes/');
 }
 
 sub _get_notes {
@@ -81,7 +81,7 @@ sub _get_notes {
     $notes->{suspended} = $sth->fetchall_arrayref({});
     
     # closed
-    $sql = q~SELECT * FROM notes WHERE status = 0 ORDER BY time DESC LIMIT 10~; 
+    $sql = q~SELECT * FROM notes WHERE status = 0 ORDER BY closed_time DESC LIMIT 5~; 
     $sth = $dbh->prepare($sql);
     $sth->execute;
     $notes->{closed} = $sth->fetchall_arrayref({});
@@ -113,7 +113,7 @@ sub edit {
     		level => $note->{level},
     		notes => $note->{note},
     	};
-        return $c->render( $stash );
+        return $c->view( $stash );
     }
     
     my $params = $c->req->params->to_hash;
@@ -124,7 +124,7 @@ sub edit {
     $sth = $dbh->prepare($sql);
     $sth->execute( $notes, $level, $id );
     
-    $c->render(template => 'redirect.html', url => '/notes/');
+    $c->view(template => 'redirect.html', url => '/notes/');
 }
 
 sub delete {
@@ -138,7 +138,7 @@ sub delete {
     my $sth = $dbh->prepare($sql);
     $sth->execute( $id );
     
-    $c->render(template => 'redirect.html', url => '/notes/');
+    $c->view(template => 'redirect.html', url => '/notes/');
 }
 
 sub update {
@@ -169,7 +169,7 @@ sub update {
 		$sth->execute( $st_val, $id );
     }
     
-    $c->render(template => 'redirect.html', url => '/notes/');
+    $c->view(template => 'redirect.html', url => '/notes/');
 }
 
 sub closed {
@@ -182,7 +182,7 @@ sub closed {
     $sth->execute;
     my $closed = $sth->fetchall_arrayref({});
     
-    $c->render(
+    $c->view(
 		template => 'notes/index.html',
 		notes => { closed => $closed },
 		is_in_closed_page => 1,

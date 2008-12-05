@@ -17,13 +17,14 @@ requires:
   DBD::SQLite: 0
   DBI: 0
   File::Slurp: 0
-  Mojo: 0.8009
-  MojoX::Renderer::TT: 0
+  LWP::Simple: 0
+  Mojo: 0.9
   Moose: 0.57
+  Scope::Guard: 0
   Template: 2.20
   Template::Plugin::FillInForm: 0
   WWW::Contact: 0
   YAML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.04
+version: 0.05
