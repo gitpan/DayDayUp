@@ -19,6 +19,8 @@ requires:
   File::Slurp: 0
   LWP::Simple: 0
   Mojo: 0.9
+  MojoX::Fixup::XHTML: 0
+  MojoX::Renderer::TT: 0.20
   Moose: 0.57
   Scope::Guard: 0
   Template: 2.20
@@ -27,4 +29,4 @@ requires:
   YAML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.06
+version: 0.07
