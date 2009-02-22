@@ -1,4 +1,3 @@
-.shipit
 bin/day_day_up
 Changes
 daydayup.db
@@ -12,6 +11,7 @@ inc/Module/Install/Fetch.pm
 inc/Module/Install/Include.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
+inc/Module/Install/Scripts.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/DayDayUp.pm
@@ -21,7 +21,6 @@ lib/DayDayUp/Context.pm
 lib/DayDayUp/Index.pm
 lib/DayDayUp/Notes.pm
 lib/DayDayUp/Perl.pm
-log/development.log
 Makefile.PL
 MANIFEST			This list of files
 META.yml

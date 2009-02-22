@@ -3,13 +3,14 @@ package DayDayUp;
 use strict;
 use warnings;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use base 'Mojolicious';
 
+use File::Spec ();
+use Template::Stash::XS ();
 use MojoX::Renderer::TT;
 use MojoX::Fixup::XHTML;
-use Template::Stash::XS ();
 
 # This method will run for each request
 sub dispatch {
@@ -36,6 +37,11 @@ sub dispatch {
 # This method will run once at server start
 sub startup {
     my $self = shift;
+
+	# set log place
+	my $log_path = File::Spec->catfile(File::Spec->tmpdir(), 'daydayup.log');
+	$self->log->path( $log_path );
+	print STDERR "Logging into $log_path\n";
 
     # Use our own context class
     $self->ctx_class('DayDayUp::Context');

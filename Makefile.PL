@@ -12,6 +12,7 @@ requires 'Template' => '2.20';
 requires 'Template::Plugin::FillInForm';
 requires 'MojoX::Renderer::TT' => '0.20';
 requires 'MojoX::Fixup::XHTML';
+requires 'File::Spec';
 requires 'DBI';
 requires 'DBD::SQLite';
 requires 'YAML';
@@ -21,6 +22,8 @@ requires 'WWW::Contact';
 requires 'Scope::Guard';
 
 tests ( join ' ', ( glob('t/*.t'), glob('t/*/*.t') ) );
+
+install_script glob('bin/*.pl');
 
 auto_install;
 WriteAll;
