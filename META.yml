@@ -27,9 +27,9 @@ requires:
   Moose: 0.75
   MooseX::Declare: 0.10
   MooseX::Types: 0
-  Search::GIN: 0
   Template: 2.20
   Template::Plugin::FillInForm: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.90
+  repository: http://github.com/fayland/daydayup/tree/master
+version: 0.91
