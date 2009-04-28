@@ -2,8 +2,12 @@
 abstract: 'DayDayUp - good good study, day day up'
 author:
   - 'Fayland Lam<fayland@gmail.com>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.790'
+generated_by: 'Module::Install version 0.820'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -14,20 +18,18 @@ no_index:
     - inc
     - t
 requires:
-  DBD::SQLite: 0
-  DBI: 0
-  File::Slurp: 0
-  File::Spec: 0
-  LWP::Simple: 0
-  Mojo: 0.9
+  DBD::SQLite: 1.25
+  KiokuDB: 0.27
+  KiokuDB::Backend::DBI: 0
+  Mojo: 0.9002
   MojoX::Fixup::XHTML: 0
   MojoX::Renderer::TT: 0.20
-  Moose: 0.57
-  Scope::Guard: 0
+  Moose: 0.75
+  MooseX::Declare: 0.10
+  MooseX::Types: 0
+  Search::GIN: 0
   Template: 2.20
   Template::Plugin::FillInForm: 0
-  WWW::Contact: 0
-  YAML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.09
+version: 0.90
