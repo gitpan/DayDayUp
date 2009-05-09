@@ -32,4 +32,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/fayland/daydayup/tree/master
-version: 0.93
+version: 0.94

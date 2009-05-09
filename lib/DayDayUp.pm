@@ -4,7 +4,7 @@ use MooseX::Declare;
 
 class DayDayUp extends Mojolicious is mutable {
 
-    our $VERSION = '0.93';
+    our $VERSION = '0.94';
     
     use File::Spec ();
     use Template::Stash::XS ();
@@ -52,7 +52,7 @@ class DayDayUp extends Mojolicious is mutable {
     
         # Default route
         $r->route('/:controller/:action')
-          ->to(controller => 'index', action => 'index');
+          ->to(controller => 'notes', action => 'index');
     
         my $tt = MojoX::Renderer::TT->build(
             mojo => $self,
